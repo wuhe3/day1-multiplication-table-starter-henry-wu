@@ -14,4 +14,16 @@ public class MultiplicationTableBuilder {
     public String build(int start, int end) {
         return "";
     }
+
+    public static boolean isEndNumLargerThanStartNum(int startNum, int endNum) {
+        return endNum > startNum;
+    }
+
+    public static boolean isInRange(int startNum, int endNum) {
+        return (startNum >= 1 && startNum <= 1000) && (endNum >= 1 && endNum <= 1000);
+    }
+
+    public static boolean isInputValid(int startNum, int endNum) {
+        return isEndNumLargerThanStartNum(startNum, endNum) && isInRange(startNum, endNum);
+    }
 }
