@@ -26,4 +26,23 @@ public class MultiplicationTableBuilder {
     public static boolean isInputValid(int startNum, int endNum) {
         return isEndNumLargerThanStartNum(startNum, endNum) && isInRange(startNum, endNum);
     }
+
+    public static String generateMultiplicationLine(int num, int startNum) {
+        StringBuilder sb = new StringBuilder();
+        for (int j = startNum; j <= num; j++) {
+            sb.append(j).append("*").append(num).append("=").append(num * j);
+            if (j != num) {
+                sb.append(" ");
+            }
+        }
+        return sb.toString();
+    }
+
+    public static String printMultiplicationTable(int startNum, int endNum) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = startNum; i <= endNum; i++) {
+            sb.append(generateMultiplicationLine(i, startNum)).append(System.lineSeparator());
+        }
+        return sb.toString();
+    }
 }
