@@ -11,8 +11,12 @@ public class MultiplicationTableBuilder {
         System.out.println(multiplicationTable);
     }
 
-    public String build(int start, int end) {
-        return "";
+    public String build(int startNum, int endNum) {
+        if (!isInputValid(startNum, endNum)) {
+            return null;
+        } else {
+            return printMultiplicationTable(startNum, endNum);
+        }
     }
 
     public static boolean isEndNumLargerThanStartNum(int startNum, int endNum) {
